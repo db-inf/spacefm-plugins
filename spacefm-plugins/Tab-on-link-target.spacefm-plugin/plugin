@@ -1,0 +1,17 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_27ccb428-y=
+cstm_27ccb428-key=-1
+cstm_27ccb428-label=Tab on link target
+cstm_27ccb428-icon=list-add
+cstm_27ccb428-cxt=0%%%%%0%%%%%6%%%%%0%%%%%true
+cstm_27ccb428-line=# opent nieuwe tab op directory van link target\n# nieuwe tab wordt eerst geopend, dan wordt zijn directory gezet; \n# we moeten dus opletten voor paden relatief t.o.v. directory van current tab\n\ndoel="$(readlink %f)"\n\nif [[ -z ${doel} ]]\nthen\n\tdoel=%d\nelse\n\tif [[ ${doel:0:2} == ".." ]]\n\tthen\n\t\tdoel="$(readlink --canonicalize %f)"\n\telif [[ ${doel:0:1} != "/" ]]\n\tthen\n\t\tdoel=%d/"$doel"\n\tfi\nfi\n\nspacefm --socket-cmd set new_tab "${doel%/*}"\n## even wachten tot new_tab er is\nsleep 0.3\nspacefm --socket-cmd set selected_filenames "${doel##*/}"\n
+cstm_27ccb428-task=1
+cstm_27ccb428-task_err=1
+cstm_27ccb428-keep=1
+cstm_27ccb428-scroll=1
+

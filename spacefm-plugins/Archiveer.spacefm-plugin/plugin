@@ -1,0 +1,14 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_0df83a72-y=
+cstm_0df83a72-label=Archiveer...
+cstm_0df83a72-icon=file-roller-symbolic
+cstm_0df83a72-line=file-roller -d %F
+cstm_0df83a72-task_err=1
+cstm_0df83a72-task_out=1
+cstm_0df83a72-keep=1
+

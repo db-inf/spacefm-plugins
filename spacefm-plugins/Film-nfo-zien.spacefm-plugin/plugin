@@ -1,0 +1,17 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_547af10a-y=
+cstm_547af10a-label=Film-nfo zien
+cstm_547af10a-icon=totem
+cstm_547af10a-cxt=0%%%%%0%%%%%0%%%%%4%%%%%video/%%%%%1%%%%%6%%%%%video_types || .mp4 || .MP4 || .avi || .AVI || .mkv || .mpeg || .mpg || .flv || .vob || .asf || .rm || .m2ts || .mov
+cstm_547af10a-line=##toont de .nfo met dezelfde basisnaam als de film\n## noch als task, noch als terminal, start b.v. mousepad :\n#/home/dirk/Documents/shellscripts/toonfilmnfo.sh %F\n\n## als task, in spacefm popup (zie Options "X Run as task, X Popup task")\n\t# maak bash array van %F\nfilms=(%F)\n\t# zie mijn /bin/catfiles\nfor b in "${films[@]}"\ndo\n\tnfo="${b/%.[^.][^.][^.]/.nfo}"\n\tif [[ -f "$nfo" && -r "$nfo" ]]\n\tthen\n\t\techo "${b##*/}"\n\t\techo "${b%/*}"\n\t\tcat "$nfo"\n\t\techo -e "\n=============="\n\tfi\ndone\n
+cstm_547af10a-task=1
+cstm_547af10a-task_pop=1
+cstm_547af10a-task_err=1
+cstm_547af10a-task_out=1
+cstm_547af10a-keep=1
+

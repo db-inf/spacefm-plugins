@@ -1,0 +1,13 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_6cb35e3d-y=
+cstm_6cb35e3d-label=Vergelijk met Meld (pnl 1-3)
+cstm_6cb35e3d-cxt=0%%%%%1%%%%%12%%%%%9%%%%%1%%%%%30%%%%%0%%%%%true%%%%%32%%%%%0%%%%%true
+cstm_6cb35e3d-line=#vergelijk 2 mappen of tekstbestanden met MELD\nmeld "${fm_panel1_files[0]}" "${fm_panel3_files[0]}"
+cstm_6cb35e3d-task=1
+cstm_6cb35e3d-keep=1
+

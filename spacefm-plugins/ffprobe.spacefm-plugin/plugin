@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_60414c08-y=
+cstm_60414c08-label=ffprobe
+cstm_60414c08-icon=media-optical-video-new
+cstm_60414c08-cxt=0%%%%%0%%%%%0%%%%%4%%%%%audio/ || video/%%%%%1%%%%%6%%%%%audio_types || .mp3 || .MP3 || .m3u || .wav || .wma || .aac || .ac3 || .flac || .ram || .m4a || .ogg%%%%%1%%%%%6%%%%%video_types || .mp4 || .MP4 || .avi || .AVI || .mkv || .mpeg || .mpg || .flv || .vob || .asf || .rm || .m2ts || .mov
+cstm_60414c08-line=#ffprobe toont eigenschappen van film en geluid\nfor i in %F; do xfce4-terminal -H -T "ffprobe $i" -e "/opt/ffmpeg/ffprobe -hide_banner \"$i\"" & done
+cstm_60414c08-task_err=1
+cstm_60414c08-task_out=1
+cstm_60414c08-keep=1
+

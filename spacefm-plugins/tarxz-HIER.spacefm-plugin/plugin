@@ -1,0 +1,14 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_476abfb1-y=
+cstm_476abfb1-label=tar.xz HIER
+cstm_476abfb1-icon=application-x-lzma-compressed-tar
+cstm_476abfb1-line=file-roller -a %f.tar.xz %F
+cstm_476abfb1-task_err=1
+cstm_476abfb1-task_out=1
+cstm_476abfb1-keep=1
+

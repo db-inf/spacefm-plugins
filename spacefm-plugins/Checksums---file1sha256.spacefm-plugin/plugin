@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_037c278b-y=
+cstm_037c278b-label=Checksu_ms -> "file[1].sha256"
+cstm_037c278b-icon=preferences-system-privacy
+cstm_037c278b-cxt=0%%%%%1%%%%%5%%%%%0%%%%%false%%%%%0%%%%%1%%%%%
+cstm_037c278b-line=sha256sum %N > %n.sha256
+cstm_037c278b-task_err=1
+cstm_037c278b-task_out=1
+cstm_037c278b-keep=1
+

@@ -1,0 +1,18 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_4c638366-y=
+cstm_4c638366-label=Jpeg ontkleuren
+cstm_4c638366-icon=emblem-photos-symbolic
+cstm_4c638366-cxt=0%%%%%1%%%%%0%%%%%0%%%%%image/jpeg
+cstm_4c638366-style=8
+cstm_4c638366-desc=Zeker? Deze opdracht maakt er\nonherroepelijk zwart-wit beelden van.
+cstm_4c638366-line=#jpegs omzetten naar grijs met JpegTrans\nnice /home/dirk/Documents/shellscripts/jpegtran_grayscale.sh %F
+cstm_4c638366-task=1
+cstm_4c638366-task_err=1
+cstm_4c638366-task_out=1
+cstm_4c638366-keep=1
+

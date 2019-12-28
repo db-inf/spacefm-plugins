@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_14c80bab-y=
+cstm_14c80bab-label=_ZipWebBrowser hier
+cstm_14c80bab-icon=/home/dirk/Documents/java/ZipWebServer/be/arci/zipweb/resources/zip.gif
+cstm_14c80bab-cxt=0%%%%%0%%%%%0%%%%%0%%%%%application/zip||application/x-java-archive||application/epub+zip||application/x-cbz%%%%%5%%%%%0%%%%%true
+cstm_14c80bab-line=cd ~/Documents/java/ZipWebServer\nif [ -d %f ]\nthen\n\techo Stop de server met url 127.0.0.3:8080/server?stop\n\tfirefox -new-window 127.0.0.3:8080 &\n\tjava be.arci.zipweb.Server  SERVER=127_0_0_3__8080_vanaf_root.properties SERVER_ROOT=%f\nelse\n\techo Stop de server met url 127.0.0.3:8080/server?stop\n\tfirefox -new-window 127.0.0.3:8080/%N!/ &\n\tjava be.arci.zipweb.Server  SERVER=127_0_0_3__8080_vanaf_root.properties SERVER_ROOT=%d\nfi\n
+cstm_14c80bab-task_pop=1
+cstm_14c80bab-task_err=1
+cstm_14c80bab-task_out=1
+cstm_14c80bab-term=1
+

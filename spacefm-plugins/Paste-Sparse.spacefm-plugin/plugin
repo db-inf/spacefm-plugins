@@ -1,0 +1,18 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_0784c222-y=
+cstm_0784c222-key=118
+cstm_0784c222-keymod=12
+cstm_0784c222-label=Paste Sparse
+cstm_0784c222-icon=edit-paste-symbolic
+cstm_0784c222-cxt=0%%%%%0%%%%%9%%%%%0%%%%%true
+cstm_0784c222-line=eval copied_files=$(spacefm -s get clipboard_copy_files)\ncp --recursive --sparse=always "${copied_files[@]}"  %d
+cstm_0784c222-task=1
+cstm_0784c222-task_err=1
+cstm_0784c222-task_out=1
+cstm_0784c222-keep=1
+

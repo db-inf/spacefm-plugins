@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_3e51121c-y=
+cstm_3e51121c-label=Vergelijk met Meld
+cstm_3e51121c-icon=meld
+cstm_3e51121c-cxt=0%%%%%1%%%%%8%%%%%0%%%%%true
+cstm_3e51121c-line=#vergelijk 2 mappen of tekstbestanden met MELD\nmeld %F
+cstm_3e51121c-task_err=1
+cstm_3e51121c-task_out=1
+cstm_3e51121c-keep=1
+

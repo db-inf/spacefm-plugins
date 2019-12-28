@@ -1,0 +1,19 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_1cf7f9ee-s=Teruggevonden: hoe ik windows heb nageïnstalleerd
+cstm_1cf7f9ee-y=
+cstm_1cf7f9ee-label=_Stuur in e-mail
+cstm_1cf7f9ee-icon=mail-attachment-symbolic
+cstm_1cf7f9ee-cxt=0%%%%%1%%%%%5%%%%%0%%%%%false%%%%%0%%%%%1%%%%%
+cstm_1cf7f9ee-b=1
+cstm_1cf7f9ee-style=2
+cstm_1cf7f9ee-desc=Berichttitel :
+cstm_1cf7f9ee-line=##gewenst formaat :  thunderbird -compose "subject='onderwerp',body='tekst',attachment='pad1,pad2,...'"\n\n#attachment verdraagt geen paden met een ',' in\nthunderbird -compose "subject='$fm_value',body='<- ${#fm_files[*]} bestand(en) bijgevoegd ->',attachment='$(IFS=$','; echo "${fm_files[*]}")'"\n\n#% is special for spacefm, separate it from format spec\n#stringformaat=s\n#printf reuses format as necessary to consume all of the arguments\n#thunderbird -compose "subject='$fm_value',body='<- ${#fm_files[*]} bestand(en) bijgevoegd ->',attachment='$(IFS=$','; printf "\"%$stringformaat\"" "${fm_files[*]}")'"
+cstm_1cf7f9ee-task_err=1
+cstm_1cf7f9ee-task_out=1
+cstm_1cf7f9ee-keep=1
+

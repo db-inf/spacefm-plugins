@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_57b7e691-y=
+cstm_57b7e691-label=Afspelen met VLC
+cstm_57b7e691-icon=vlc
+cstm_57b7e691-cxt=0%%%%%1%%%%%5%%%%%0%%%%%true
+cstm_57b7e691-line=#hele directory of alleen directory VIDEO_TS spelen in VLC\nvlc %F
+cstm_57b7e691-task_err=1
+cstm_57b7e691-task_out=1
+cstm_57b7e691-keep=1
+

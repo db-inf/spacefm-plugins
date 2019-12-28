@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_1541ddf4-y=
+cstm_1541ddf4-label=Unmount archief op /media/zipmnt
+cstm_1541ddf4-icon=media-zip-symbolic
+cstm_1541ddf4-cxt=0%%%%%1%%%%%2%%%%%0%%%%%/media%%%%%1%%%%%0%%%%%zipmnt%%%%%5%%%%%0%%%%%true
+cstm_1541ddf4-line=fusermount -u %f
+cstm_1541ddf4-task_err=1
+cstm_1541ddf4-task_out=1
+cstm_1541ddf4-keep=1
+

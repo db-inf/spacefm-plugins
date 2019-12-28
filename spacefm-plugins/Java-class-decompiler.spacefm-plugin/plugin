@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_322e3528-y=
+cstm_322e3528-label=Java .class decompiler
+cstm_322e3528-icon=text-x-java-source
+cstm_322e3528-cxt=0%%%%%1%%%%%1%%%%%6%%%%%.class || .jar%%%%%5%%%%%0%%%%%false%%%%%8%%%%%0%%%%%false
+cstm_322e3528-line=# Luyten GUI voor Procyon decompiler\njava -jar /home/dirk/bin/java/luyten.jar %f
+cstm_322e3528-task_err=1
+cstm_322e3528-task_out=1
+cstm_322e3528-keep=1
+

@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_01ba86e5-y=
+cstm_01ba86e5-label=Vergelijk met WinMerge (wine)
+cstm_01ba86e5-icon=/media/sdata/.win-gschijf/PROGRAMS/WinMerge/WinMerge.png
+cstm_01ba86e5-cxt=0%%%%%1%%%%%8%%%%%0%%%%%true
+cstm_01ba86e5-line=#opent WinMerge; playonlinux mount linux root op windows schijfletter Z:\n/usr/share/playonlinux/playonlinux --run "WinMerge" /r /x /u "Z:${fm_files[0]}" "Z:${fm_files[1]}"
+cstm_01ba86e5-task_err=1
+cstm_01ba86e5-task_out=1
+cstm_01ba86e5-keep=1
+

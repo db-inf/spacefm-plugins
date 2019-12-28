@@ -1,0 +1,14 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_3f4ac852-y=
+cstm_3f4ac852-label=Mount iso/squash op /cdrom
+cstm_3f4ac852-icon=application-x-cd-image
+cstm_3f4ac852-cxt=0%%%%%0%%%%%1%%%%%6%%%%%.iso||.ISO||.mdf||.MDF||.squashfs
+cstm_3f4ac852-line=#mount een cd-image (ISO, UDF, Alcohol MDF) of een squashfs archief op /cdrom\n#moet exact overeenkomen met een lijn in sudoers.d\nmtyp="${fm_file##*.}"\nmtyp="${mtyp,,}"\n[ "$mtyp" = "squashfs" ] || mtyp="udf,iso9660"\nsudo /bin/mount -o ro -t $mtyp %f /cdrom\nspacefm --socket-cmd set new_tab /cdrom\n
+cstm_3f4ac852-task_err=1
+cstm_3f4ac852-keep=1
+

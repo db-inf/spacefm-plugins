@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_599bddc2-y=
+cstm_599bddc2-label=Chec_k checksum
+cstm_599bddc2-icon=preferences-system-privacy-symbolic
+cstm_599bddc2-cxt=0%%%%%1%%%%%1%%%%%6%%%%%.sha256 || .md5 || .sha1 || .sha224 || .sha384 || .sha512 || .sha%%%%%8%%%%%0%%%%%false
+cstm_599bddc2-line=${fm_file##*.}sum -c %n
+cstm_599bddc2-task_err=1
+cstm_599bddc2-task_out=1
+cstm_599bddc2-term=1
+cstm_599bddc2-keep=1
+

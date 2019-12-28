@@ -1,0 +1,14 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_6f097f00-y=
+cstm_6f097f00-label=markdown browse
+cstm_6f097f00-cxt=0%%%%%0%%%%%1%%%%%6%%%%%.md
+cstm_6f097f00-line=md2html %f
+cstm_6f097f00-task_err=1
+cstm_6f097f00-task_out=1
+cstm_6f097f00-keep=1
+

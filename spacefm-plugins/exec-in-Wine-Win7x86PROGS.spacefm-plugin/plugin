@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_083a6991-y=
+cstm_083a6991-label=exec in Wine (Win7x86PROGS)
+cstm_083a6991-icon=system-run-symbolic
+cstm_083a6991-cxt=0%%%%%1%%%%%1%%%%%6%%%%%.exe || .com || .bat || .EXE || .COM || .BAT%%%%%8%%%%%0%%%%%false
+cstm_083a6991-line=#voert een Windows .bat, .exe of .com uit\n/usr/share/playonlinux/playonlinux --run "execute in Win7x86PROGS" %f
+cstm_083a6991-task_err=1
+cstm_083a6991-task_out=1
+cstm_083a6991-keep=1
+

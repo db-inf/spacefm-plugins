@@ -1,0 +1,17 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_38b88679-y=
+cstm_38b88679-key=65535
+cstm_38b88679-label=Trash
+cstm_38b88679-icon=user-trash-symbolic
+cstm_38b88679-cxt=2%%%%%0%%%%%2%%%%%6%%%%%/.Trash/1000/files%%%%%2%%%%%6%%%%%/.Trash/1000/info%%%%%2%%%%%6%%%%%/local/Trash/files%%%%%2%%%%%6%%%%%/local/Trash/info
+cstm_38b88679-line=# remove arguments if on one of my tmpfs mounts, else trash\n\t# workaround spacefm parameter %m, cannot be escaped as \%m or %%m\nmountpt=$(stat -c %"m" %d) &&\nfilesys=$(findmnt --noheadings --output SOURCE "$mountpt") &&\n[ tmpfs = "$filesys" ] &&\n\trm --force --recursive %F || \n\tbatrash %F\n
+cstm_38b88679-task=1
+cstm_38b88679-task_err=1
+cstm_38b88679-task_out=1
+cstm_38b88679-keep=1
+

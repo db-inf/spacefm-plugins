@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_3380ac7b-y=
+cstm_3380ac7b-label=Jbig2Writer
+cstm_3380ac7b-icon=cab_view
+cstm_3380ac7b-cxt=0%%%%%1%%%%%0%%%%%4%%%%%image/%%%%%1%%%%%6%%%%%.tif || .TIF || .tiff || .TIFF || .png || .PNG
+cstm_3380ac7b-line=# werkt alleen voor zwart-wit\nnice java be.arci.jbig2.Jbig2Writer %F
+cstm_3380ac7b-task=1
+cstm_3380ac7b-task_err=1
+cstm_3380ac7b-task_out=1
+cstm_3380ac7b-keep=1
+

@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_0f75aa51-y=
+cstm_0f75aa51-label=hexdump
+cstm_0f75aa51-icon=text-x-chdr
+cstm_0f75aa51-cxt=0%%%%%1%%%%%5%%%%%0%%%%%false%%%%%8%%%%%0%%%%%false
+cstm_0f75aa51-desc=Are you sure?
+cstm_0f75aa51-line=echo -ne "\\e]2;hexdump "%n"\\a" & hexdump -C %f |less
+cstm_0f75aa51-task_err=1
+cstm_0f75aa51-task_out=1
+cstm_0f75aa51-term=1
+

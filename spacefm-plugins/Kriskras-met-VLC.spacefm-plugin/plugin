@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_4449f917-y=
+cstm_4449f917-label=Kriskras met VLC
+cstm_4449f917-icon=vlc-kb
+cstm_4449f917-cxt=0%%%%%1%%%%%5%%%%%0%%%%%true
+cstm_4449f917-line=#hele directory of alleen directory VIDEO_TS spelen in VLC\nvlc  --random %F
+cstm_4449f917-task_err=1
+cstm_4449f917-task_out=1
+cstm_4449f917-keep=1
+

@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_4d47cfb7-y=
+cstm_4d47cfb7-label=Copy to _ramdisk
+cstm_4d47cfb7-icon=gnome-dev-memory
+cstm_4d47cfb7-line=spacefm -s run-task copy "${fm_files[@]}" /media/ramdisk
+cstm_4d47cfb7-task=1
+cstm_4d47cfb7-task_err=1
+cstm_4d47cfb7-keep=1
+cstm_4d47cfb7-scroll=1
+

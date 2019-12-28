@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_314bf11e-y=
+cstm_314bf11e-label=_Script in terminal
+cstm_314bf11e-icon=utilities-terminal-symbolic
+cstm_314bf11e-cxt=0%%%%%1%%%%%0%%%%%0%%%%%application/x-shellscript%%%%%8%%%%%0%%%%%false
+cstm_314bf11e-line=%f
+cstm_314bf11e-task_err=1
+cstm_314bf11e-task_out=1
+cstm_314bf11e-term=1
+cstm_314bf11e-keep=1
+

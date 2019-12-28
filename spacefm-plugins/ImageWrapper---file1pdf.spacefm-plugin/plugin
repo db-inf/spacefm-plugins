@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_618bf2ff-y=
+cstm_618bf2ff-label=ImageWrapper -> file[1].pdf
+cstm_618bf2ff-icon=application-pdf
+cstm_618bf2ff-cxt=0%%%%%1%%%%%1%%%%%6%%%%%.jpg || .JPG || .jpeg || .JPEG || .jb2 || .JB2 || .jbig2 || .JBIG2
+cstm_618bf2ff-line=#maakt 1 pdf van stel jpg en jb2\njava be.arci.pdf.ImageWrapper %N
+cstm_618bf2ff-task=1
+cstm_618bf2ff-task_err=1
+cstm_618bf2ff-task_out=1
+cstm_618bf2ff-keep=1
+

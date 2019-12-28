@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_51dfa3de-y=
+cstm_51dfa3de-label=sha256sum
+cstm_51dfa3de-icon=preferences-system-privacy
+cstm_51dfa3de-cxt=0%%%%%1%%%%%5%%%%%0%%%%%false
+cstm_51dfa3de-line=#Toont sha256-checksums van geselecteerde bestanden in \n#een terminalvenster\n\n# bestansdnamen eerst sorteren, om gemakkelijker te kunnen \n# vergelijken met output van andere directory\n\nIFS=$'\n' A=( $(printf "%s\n" %N|sort) )\nsha256sum "${A[@]}"
+cstm_51dfa3de-task_err=1
+cstm_51dfa3de-task_out=1
+cstm_51dfa3de-term=1
+cstm_51dfa3de-keep=1
+

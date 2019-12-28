@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_6be4cacf-y=
+cstm_6be4cacf-label=Unmount mnt/ of cdrom/
+cstm_6be4cacf-icon=media-import-audio-cd
+cstm_6be4cacf-cxt=0%%%%%1%%%%%5%%%%%0%%%%%true%%%%%1%%%%%0%%%%%mnt||cdrom
+cstm_6be4cacf-line=#moet overeenkomen met een lijn in sudoers.d\nsudo umount %f
+cstm_6be4cacf-task_err=1
+cstm_6be4cacf-task_out=1
+cstm_6be4cacf-keep=1
+

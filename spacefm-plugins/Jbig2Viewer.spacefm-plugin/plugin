@@ -1,0 +1,15 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_56f9fe75-y=
+cstm_56f9fe75-label=Jbig2Viewer
+cstm_56f9fe75-icon=cab_view
+cstm_56f9fe75-cxt=0%%%%%0%%%%%1%%%%%6%%%%%.jb2 || .JB2 || .jbig2 || .JBIG2
+cstm_56f9fe75-line=java be.arci.jbig2.Jbig2Viewer %F
+cstm_56f9fe75-task_err=1
+cstm_56f9fe75-task_out=1
+cstm_56f9fe75-keep=1
+

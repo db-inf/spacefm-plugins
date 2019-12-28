@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_49e1f68b-y=
+cstm_49e1f68b-label=Bekijk
+cstm_49e1f68b-icon=text
+cstm_49e1f68b-cxt=0%%%%%0%%%%%5%%%%%0%%%%%false
+cstm_49e1f68b-desc=Are you sure?
+cstm_49e1f68b-line=echo -ne "\\e]2;less "%n"...\\a" & less -- %F
+cstm_49e1f68b-task_err=1
+cstm_49e1f68b-task_out=1
+cstm_49e1f68b-term=1
+

@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=37
+cstm_5ef690ef-y=
+cstm_5ef690ef-label=PDF comprimeren
+cstm_5ef690ef-icon=application-pdf
+cstm_5ef690ef-cxt=0%%%%%1%%%%%0%%%%%0%%%%%application/pdf
+cstm_5ef690ef-line=#comprimeer pdf met Multivalent\nnice /home/dirk/bin/pdfcompress %F
+cstm_5ef690ef-task=1
+cstm_5ef690ef-task_err=1
+cstm_5ef690ef-task_out=1
+cstm_5ef690ef-keep=1
+

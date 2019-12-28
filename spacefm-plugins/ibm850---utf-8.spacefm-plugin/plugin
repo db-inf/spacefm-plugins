@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_0bc65afe-y=
+cstm_0bc65afe-label=ibm850 -> utf-8
+cstm_0bc65afe-icon=format-text-direction-ltr-symbolic
+cstm_0bc65afe-cxt=0%%%%%0%%%%%1%%%%%6%%%%%.txt || .TXT || .nfo || .NFO || .ini || .INI || .cfg || .CFG || .lst || .LST || .srt || .SRT || .java || .JAVA || .jad || .JAD || .c || .C || .h || .H || .cue || .CUE%%%%%0%%%%%4%%%%%text/
+cstm_0bc65afe-line=#Converteer in place van IBM850 naar UTF-8, met backup naar .ibm850 bij wijzigingen\n/home/dirk/Documents/shellscripts/ibm850-naar-utf8.sh %F
+cstm_0bc65afe-task=1
+cstm_0bc65afe-task_err=1
+cstm_0bc65afe-task_out=1
+cstm_0bc65afe-keep=1
+

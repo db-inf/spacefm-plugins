@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_173c8ce6-y=
+cstm_173c8ce6-label=utf-8 -> cp1252
+cstm_173c8ce6-icon=format-text-direction-rtl-symbolic
+cstm_173c8ce6-cxt=0%%%%%0%%%%%1%%%%%6%%%%%.txt || .TXT || .nfo || .NFO || .ini || .INI || .cfg || .CFG || .lst || .LST || .srt || .SRT || .java || .JAVA || .jad || .JAD || .c || .C || .h || .H || .cue || .CUE%%%%%0%%%%%4%%%%%text/
+cstm_173c8ce6-line=#Converteer in place van UTF-8 naar Windows 1252, met backup naar .utf8 bij wijzigingen\n/home/dirk/Documents/shellscripts/utf8-naar-cp1252.sh %F
+cstm_173c8ce6-task=1
+cstm_173c8ce6-task_err=1
+cstm_173c8ce6-task_out=1
+cstm_173c8ce6-keep=1
+
