@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_2655e15e-y=
+cstm_2655e15e-label=SmartVersion pak .svf uit in...
+cstm_2655e15e-icon=archive-extract
+cstm_2655e15e-cxt=0%%%%%1%%%%%1%%%%%6%%%%%.svf%%%%%8%%%%%0%%%%%false
+cstm_2655e15e-line=# Pak .svf SmartVersion file uit naar gekozen directory\n# afhankelijkheden :\n#\t- bash\n#\t- smv op pad [SmartVersion](http://www.smartversion.com/)\n# OPM: spacefm -t --chooser heeft last met zijn argumenten : --dir en --save moeten VOOR\n#\tDIR/ staan, DIR/ moet met / eindigen, en laatste paddeel van DIR/ wordt in het\n#\tinvulveld getoond. Maak dit zo kort en onopvallend mogelijk door het te beperken\n#\ttot "."\neval "`cd "$fm_pwd";spacefm -g --window-size 1024x800 --label 'Kies doeldirectory:' --chooser --dir --save ./ --button cancel --button ok`"\nif [ "$dialog_pressed_label" = "ok" ] \nthen\n\tif [ -d "$dialog_chooser1_dir" ] \n\tthen\n\t\tif [ -w "$dialog_chooser1_dir" ]\n\t\tthen\n\t\t\tsvf=$(realpath %f)\n\t\t\tcd "$dialog_chooser1_dir"\n\t\t\tsmv -x "$svf" -br "${svf%/*}"\n\t\telse\n\t\t\t>&2 echo "Kan niet schrijven naar doeldirectory \"$dialog_chooser1_dir\""\n\t\tfi\n\telse\n\t\t>&2 echo "Dit is geen directory : \"$dialog_chooser1_dir\""\n\tfi\nfi\n
+cstm_2655e15e-task=1
+cstm_2655e15e-task_err=1
+cstm_2655e15e-task_out=1
+cstm_2655e15e-keep=1
+

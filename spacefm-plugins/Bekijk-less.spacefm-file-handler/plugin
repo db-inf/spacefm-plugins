@@ -1,0 +1,13 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+hand_f_1a933849-s=text/x-nfo text/plain
+hand_f_1a933849-x=*.nfo
+hand_f_1a933849-label=Bekijk (less)
+hand_f_1a933849-icon=
+hand_f_1a933849-b=1
+hand_f_1a933849-term=1
+

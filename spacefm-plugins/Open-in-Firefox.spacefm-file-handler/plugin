@@ -1,0 +1,12 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+hand_f_31389da3-s=application/x-mswinurl
+hand_f_31389da3-x=*.url *.URL
+hand_f_31389da3-label=Open in Firefox
+hand_f_31389da3-icon=
+hand_f_31389da3-b=1
+

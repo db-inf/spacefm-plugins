@@ -67,12 +67,14 @@
     #/home/dirk/Documents/shellscripts/toonfilmnfo.sh %F
     
     ## als task, in spacefm popup (zie Options "X Run as task, X Popup task")
-    	# maak bash array van %F
-    films=(%F)
+    	# sorteer "${fm_files[@]}" (same as %F), en vervang .??? door .nfo
+    [ -v IFS ] && ifsOld="$IFS" || unset ifsOld
+    IFS=$'
+    ' nfos=($(sort -u <<<"${fm_files[*]/%.[^.][^.][^.]/.nfo}"))
+    [ -v ifsOld ] && IFS="$ifsOld" || unset IFS
     	# zie mijn /bin/catfiles
-    for b in "${films[@]}"
+    for nfo in "${nfos[@]}"
     do
-    	nfo="${b/%.[^.][^.][^.]/.nfo}"
     	if [[ -f "$nfo" && -r "$nfo" ]]
     	then
     		echo "${b##*/}"
@@ -192,6 +194,46 @@
     
     %f
 
+# SmartVersion-list-svf.spacefm-plugin
+## SmartVersion list .svf
+    
+    # bekijkt inhoud van .svf SmartVersion file
+    # dependencies : smv op pad [SmartVersion](http://www.smartversion.com/)
+    for svf in %F
+    do
+    	smv -lv "$svf"
+    done
+
+# SmartVersion-pak-svf-uit-in.spacefm-plugin
+## SmartVersion pak .svf uit in...
+    
+    # Pak .svf SmartVersion file uit naar gekozen directory
+    # afhankelijkheden :
+    #	- bash
+    #	- smv op pad [SmartVersion](http://www.smartversion.com/)
+    # OPM: spacefm -t --chooser heeft last met zijn argumenten : --dir en --save moeten VOOR
+    #	DIR/ staan, DIR/ moet met / eindigen, en laatste paddeel van DIR/ wordt in het
+    #	invulveld getoond. Maak dit zo kort en onopvallend mogelijk door het te beperken
+    #	tot "."
+    eval "`cd "$fm_pwd";spacefm -g --window-size 1024x800 --label 'Kies doeldirectory:' --chooser --dir --save ./ --button cancel --button ok`"
+    if [ "$dialog_pressed_label" = "ok" ] 
+    then
+    	if [ -d "$dialog_chooser1_dir" ] 
+    	then
+    		if [ -w "$dialog_chooser1_dir" ]
+    		then
+    			svf=$(realpath %f)
+    			cd "$dialog_chooser1_dir"
+    			smv -x "$svf" -br "${svf%/*}"
+    		else
+    			>&2 echo "Kan niet schrijven naar doeldirectory \"$dialog_chooser1_dir\""
+    		fi
+    	else
+    		>&2 echo "Dit is geen directory : \"$dialog_chooser1_dir\""
+    	fi
+    fi
+    
+
 # Stuur-in-e-mail.spacefm-plugin
 ## _Stuur in e-mail
     
@@ -238,6 +280,8 @@
     
     # remove arguments if on one of my tmpfs mounts, else trash
     	# workaround spacefm parameter %m, cannot be escaped as \%m or %%m
+    #
+    # requirements [batrash](https://github.com/db-inf/batrash) on your path
     mountpt=$(stat -c %"m" %d) &&
     filesys=$(findmnt --noheadings --output SOURCE "$mountpt") &&
     [ tmpfs = "$filesys" ] &&
@@ -306,7 +350,30 @@
 ## ffprobe
     
     #ffprobe toont eigenschappen van film en geluid
-    for i in %F; do xfce4-terminal -H -T "ffprobe $i" -e "/opt/ffmpeg/ffprobe -hide_banner \"$i\"" & done
+    # afhankelijkheden : 
+    # - bash : om de terminal niet expliciet open te moeten houden (en dan expliciet te sluiten)
+    # 	gebruik ik bash om naar less te pipen, zodat terminal sluit door in less 'q' te typen
+    # - ffprobe (ffmpeg)
+    
+    ## version 1 : -H(old) terminal open, close explicitely
+    #for i in %F; do xfce4-terminal --hide-menubar --hide-toolbar --hide-scrollbar -H -T "ffprobe $i" -e "ffprobe -hide_banner \"$i\"" & done
+    
+    ## mijn favoriet
+    ## version 2 : terminal window per file, use less to hold window open until 'q' typed
+    #for i in %F; do xfce4-terminal --hide-menubar --hide-toolbar --hide-scrollbar -T "ffprobe $i" -e "bash -c \"ffprobe -hide_banner \\\"$i\\\" 2>&1 | less\"" & done
+    # met nadruk op een paar gegevens
+    for i in %F; do xfce4-terminal --hide-menubar --hide-toolbar --hide-scrollbar -T "ffprobe $i" -e "bash -c \"ffprobe -hide_banner \\\"$i\\\" 2>&1 | grep --colour=always -E -e 'Duration[^[:alpha:]]+' -e '[0-9]+ Hz' -e '[0-9.]+ kb[/p]s' -e 'Stream [^,]+(,|$)' -e ', [0-9]+x[0-9]+( \[.+])?,' -e '^' | less -R\"" & done
+    
+    ## version 3 : single terminal window with tabs
+    #termtabs=()
+    #for i in %F
+    #do
+    #	[ ${#termtabs[*]} = 0 ] || termtabs+=(--tab)
+    #	termtabs+=(-T "\"ffprobe $i\"" -e "bash -c \"ffprobe -hide_banner \\\"$i\\\" 2>&1 | less\"")
+    #done
+    #xfce4-terminal --hide-menubar --hide-toolbar --hide-scrollbar "${termtabs[@]}" &
+    
+    
 
 # hexdump.spacefm-plugin
 ## hexdump
@@ -376,4 +443,12 @@
     
     #Converteer in place van UTF-8 naar Windows 1252, met backup naar .utf8 bij wijzigingen
     /home/dirk/Documents/shellscripts/utf8-naar-cp1252.sh %F
+
+# Bekijk-less.spacefm-file-handler
+## Bekijk (less)
+    
+
+# Open-in-Firefox.spacefm-file-handler
+## Open in Firefox
+    
 

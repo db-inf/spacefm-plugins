@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_7c016211-y=
+cstm_7c016211-label=SmartVersion list .svf
+cstm_7c016211-icon=archive-manager
+cstm_7c016211-cxt=0%%%%%0%%%%%1%%%%%6%%%%%.svf
+cstm_7c016211-line=# bekijkt inhoud van .svf SmartVersion file\n# dependencies : smv op pad [SmartVersion](http://www.smartversion.com/)\nfor svf in %F\ndo\n\tsmv -lv "$svf"\ndone
+cstm_7c016211-task=1
+cstm_7c016211-task_err=1
+cstm_7c016211-task_out=1
+cstm_7c016211-keep=1
+

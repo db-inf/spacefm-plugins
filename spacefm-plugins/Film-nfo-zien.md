@@ -6,12 +6,14 @@
     #/home/dirk/Documents/shellscripts/toonfilmnfo.sh %F
     
     ## als task, in spacefm popup (zie Options "X Run as task, X Popup task")
-    	# maak bash array van %F
-    films=(%F)
+    	# sorteer "${fm_files[@]}" (same as %F), en vervang .??? door .nfo
+    [ -v IFS ] && ifsOld="$IFS" || unset ifsOld
+    IFS=$'
+    ' nfos=($(sort -u <<<"${fm_files[*]/%.[^.][^.][^.]/.nfo}"))
+    [ -v ifsOld ] && IFS="$ifsOld" || unset IFS
     	# zie mijn /bin/catfiles
-    for b in "${films[@]}"
+    for nfo in "${nfos[@]}"
     do
-    	nfo="${b/%.[^.][^.][^.]/.nfo}"
     	if [[ -f "$nfo" && -r "$nfo" ]]
     	then
     		echo "${b##*/}"
