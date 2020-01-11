@@ -8,7 +8,7 @@ cstm_547af10a-y=
 cstm_547af10a-label=Film-nfo zien
 cstm_547af10a-icon=totem
 cstm_547af10a-cxt=0%%%%%0%%%%%0%%%%%4%%%%%video/%%%%%1%%%%%6%%%%%video_types || .mp4 || .MP4 || .avi || .AVI || .mkv || .mpeg || .mpg || .flv || .vob || .asf || .rm || .m2ts || .mov||.nfo
-cstm_547af10a-line=##toont de .nfo met dezelfde basisnaam als de film\n## noch als task, noch als terminal, start b.v. mousepad :\n#/home/dirk/Documents/shellscripts/toonfilmnfo.sh %F\n\n## als task, in spacefm popup (zie Options "X Run as task, X Popup task")\n\t# sorteer "${fm_files[@]}" (same as %F), en vervang .??? door .nfo\n[ -v IFS ] && ifsOld="$IFS" || unset ifsOld\nIFS=$'\n' nfos=($(sort -u <<<"${fm_files[*]/%.[^.][^.][^.]/.nfo}"))\n[ -v ifsOld ] && IFS="$ifsOld" || unset IFS\n\t# zie mijn /bin/catfiles\nfor nfo in "${nfos[@]}"\ndo\n\tif [[ -f "$nfo" && -r "$nfo" ]]\n\tthen\n\t\techo "${b##*/}"\n\t\techo "${b%/*}"\n\t\tcat "$nfo"\n\t\techo -e "\n=============="\n\tfi\ndone\n
+cstm_547af10a-line=##toont de .nfo met dezelfde basisnaam als de film\n## noch als task, noch als terminal, start b.v. mousepad :\n#/home/dirk/Documents/shellscripts/toonfilmnfo.sh %F\n\n## als task, in spacefm popup (zie Options "X Run as task, X Popup task")\n\t# sorteer "${fm_files[@]}" (same as %F), en vervang .??? door .nfo\n[ -v IFS ] && ifsOld="$IFS" || unset ifsOld\nIFS=$'\n' nfos=($(sort -u <<<"${fm_files[*]/%.[^.][^.][^.]/.nfo}"))\n[ -v ifsOld ] && IFS="$ifsOld" || unset IFS\n\t# zie mijn /bin/catfiles\nfor nfo in "${nfos[@]}"\ndo\n\tif [[ -f "$nfo" && -r "$nfo" ]]\n\tthen\n\t\techo "${nfo##*/}"\n\t\techo "${nfo%/*}"\n\t\tcat "$nfo"\n\t\techo -e "\n=============="\n\tfi\ndone\n
 cstm_547af10a-task=1
 cstm_547af10a-task_pop=1
 cstm_547af10a-task_err=1
