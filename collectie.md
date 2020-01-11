@@ -77,8 +77,8 @@
     do
     	if [[ -f "$nfo" && -r "$nfo" ]]
     	then
-    		echo "${b##*/}"
-    		echo "${b%/*}"
+    		echo "${nfo##*/}"
+    		echo "${nfo%/*}"
     		cat "$nfo"
     		echo -e "
     =============="
