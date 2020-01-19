@@ -133,13 +133,13 @@
 ## Jpeg ontkleuren
     
     #jpegs omzetten naar grijs met JpegTrans
-    nice /home/dirk/Documents/shellscripts/jpegtran_grayscale.sh %F
+    nice /home/dirk/Documents/shellscripts/parallel_jpegtran_grayscale.sh %F
 
 # Jpeg-optimalizeren.spacefm-plugin
 ## Jpeg optimalizeren
     
     #jpegs verliesloos hercomprimeren met JpegTran
-    nice /home/dirk/Documents/shellscripts/jpegtran_recompress.sh %F
+    nice /home/dirk/Documents/shellscripts/parallel_jpegtran_recompress.sh %F
 
 # Kriskras-met-VLC.spacefm-plugin
 ## Kriskras met VLC

@@ -3,12 +3,12 @@
 # THIS FILE IS NOT DESIGNED TO BE EDITED
 
 [Plugin]
-config_version-s=37
+config_version-s=38
 cstm_2719e665-y=
 cstm_2719e665-label=Jpeg optimalizeren
 cstm_2719e665-icon=emblem-photos
 cstm_2719e665-cxt=0%%%%%0%%%%%0%%%%%0%%%%%image/jpeg
-cstm_2719e665-line=#jpegs verliesloos hercomprimeren met JpegTran\nnice /home/dirk/Documents/shellscripts/jpegtran_recompress.sh %F
+cstm_2719e665-line=#jpegs verliesloos hercomprimeren met JpegTran\nnice /home/dirk/Documents/shellscripts/parallel_jpegtran_recompress.sh %F
 cstm_2719e665-task_err=1
 cstm_2719e665-task_out=1
 cstm_2719e665-keep=1
