@@ -3,8 +3,8 @@
 # THIS FILE IS NOT DESIGNED TO BE EDITED
 
 [Plugin]
-config_version-s=37
-cstm_1cf7f9ee-s=Teruggevonden: hoe ik windows heb nageïnstalleerd
+config_version-s=38
+cstm_1cf7f9ee-s=voor uw scheepsstage later
 cstm_1cf7f9ee-y=
 cstm_1cf7f9ee-label=_Stuur in e-mail
 cstm_1cf7f9ee-icon=mail-attachment-symbolic
@@ -12,8 +12,7 @@ cstm_1cf7f9ee-cxt=0%%%%%1%%%%%5%%%%%0%%%%%false%%%%%0%%%%%1%%%%%
 cstm_1cf7f9ee-b=1
 cstm_1cf7f9ee-style=2
 cstm_1cf7f9ee-desc=Berichttitel :
-cstm_1cf7f9ee-line=##gewenst formaat :  thunderbird -compose "subject='onderwerp',body='tekst',attachment='pad1,pad2,...'"\n\n#attachment verdraagt geen paden met een ',' in\nthunderbird -compose "subject='$fm_value',body='<- ${#fm_files[*]} bestand(en) bijgevoegd ->',attachment='$(IFS=$','; echo "${fm_files[*]}")'"\n\n#% is special for spacefm, separate it from format spec\n#stringformaat=s\n#printf reuses format as necessary to consume all of the arguments\n#thunderbird -compose "subject='$fm_value',body='<- ${#fm_files[*]} bestand(en) bijgevoegd ->',attachment='$(IFS=$','; printf "\"%$stringformaat\"" "${fm_files[*]}")'"
+cstm_1cf7f9ee-line=## Requires Thunderbird, bash\n\n# Thunderbird CLI compose format :  thunderbird -compose "subject='onderwerp',body='tekst',attachment='pad1,pad2,...'"\n\n# escaping commas in attachment= doesn't work, so remove them by using symbolic \n# links without commas to such files; as it happens, thunderbird will resolve \n# the symbolic links and use the original filename in the message\nnocommapath=/tmp # on a multi-user system you might prefer a private directory\nattachs=()\ncleanup=()\nfor a in "${fm_files[@]}"\ndo\n\tnocomma="${a//,/_}"\n\tif [ "$a" = "$nocomma" ]\n\tthen # no commas to remove\n\t\tattachs+=("$a")\n\telif [ "${a##*/}" = "${nocomma##*/}" ]\n\tthen\t# comma is in the directory, link to a path without commas\n\t\tln -s -t "$nocommapath"/ "$a"\n\t\tattachs+=("$nocommapath"/"${a##*/}")\t\t\n\t\tcleanup+=("$nocommapath"/"${a##*/}")\t\t\n\telse # comma is in the filename itself, replace it\n\t\tln -s -T "$a" "$nocommapath"/"${nocomma##*/}"\n\t\tattachs+=( "$nocommapath"/"${nocomma##*/}")\t\t\n\t\tcleanup+=( "$nocommapath"/"${nocomma##*/}")\t\t\n\tfi\ndone\n\t# use [*], NOT [@]\nthunderbird -compose "subject='$fm_value',body='<- ${#attachs[*]} bestand(en) bijgevoegd ->',attachment='$(IFS=$','; echo "${attachs[*]}")'"\n\n# I would like to do a cleanup, but the thunderbird -compose command seems to delegate\n# to a running Thunderbird instance and exit; that is too soon to rm the symlinks\n#\t rm "${cleanup[@]}"\n\n# OLD VERSION\n#% is special for spacefm, separate it from format spec\n#stringformaat=s\n#printf reuses format as necessary to consume all of the arguments\n#thunderbird -compose "subject='$fm_value',body='<- ${#fm_files[*]} bestand(en) bijgevoegd ->',attachment='$(IFS=$','; printf "\"%$stringformaat\"" "${fm_files[*]}")'"
 cstm_1cf7f9ee-task_err=1
 cstm_1cf7f9ee-task_out=1
-cstm_1cf7f9ee-keep=1
 
