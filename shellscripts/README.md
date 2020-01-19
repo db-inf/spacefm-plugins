@@ -10,3 +10,10 @@ These scripts
   
 are, on my disk, symbolic links to `codepage-naar-codepage.sh`
 
+## scripts for massive multi-parallel handling of files
+These scripts
+
+- `parallel_jpegtran_grayscale.sh`
+-	`parallel_jpegtran_recompress.sh`
+
+are, on my disk, symbolic links to `parallel.sh`
