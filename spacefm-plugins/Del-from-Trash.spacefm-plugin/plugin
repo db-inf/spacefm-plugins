@@ -8,7 +8,7 @@ cstm_3272b8b9-y=
 cstm_3272b8b9-key=-1
 cstm_3272b8b9-label=Del from Trash
 cstm_3272b8b9-icon=user-trash-full
-cstm_3272b8b9-cxt=0%%%%%1%%%%%2%%%%%6%%%%%/.Trash/1000/files||/.Trash/1000/info||/.Trash-1000/files||/.Trash-1000/info||/local/share/Trash/files||/local/share/Trash/info%%%%%1%%%%%10%%%%%?*
+cstm_3272b8b9-cxt=0%%%%%1%%%%%2%%%%%6%%%%%/.Trash/1000/files||/.Trash/1000/info||/.Trash-1000/files||/.Trash-1000/info||/.local/share/Trash/files||/.local/share/Trash/info%%%%%1%%%%%10%%%%%?*
 cstm_3272b8b9-line=## GEEN HOTKEY, want die zou ook werken zonder dat het menu item getoond wordt; disabled buiten trash wordt toch getoond, en dat maakt onze menu's te lang. Daarom gewoon context "show in trash", en geen hotkey\n\n# if in trash files, remove trash info too, and vice versa\n# we ARE carefull to remove only when directory change succeeds\n# we don't care if files we want to delete do not exist\n# we always remove trash file before trashinfo\n#! [[ == ]] to use pattern matching\nif [[ %d == */files ]]\nthen\n\trm --recursive %F\n\tcd %d/../info && rm "${fm_filenames[@]/%/.trashinfo}"\nelif [[ %d == */info ]]\nthen\n\tpushd ../files > /dev/null && (\n\t\trm --recursive "${fm_filenames[@]/%.trashinfo}"\n\t\tpopd > /dev/null && rm %F\n\t)\nelse\n\t>&2 echo "Spacefm plugin malconfigured, should run only in trash info or trash files"\nfi
 cstm_3272b8b9-task=1
 cstm_3272b8b9-task_err=1
