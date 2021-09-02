@@ -1,0 +1,18 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_29aa820e-s=0 -Z
+cstm_29aa820e-y=
+cstm_29aa820e-label=Vergelijk met dif_f ☰
+cstm_29aa820e-icon=align-horizontal-center-symbolic
+cstm_29aa820e-cxt=0%%%%%1%%%%%8%%%%%0%%%%%true%%%%%0%%%%%4%%%%%text/
+cstm_29aa820e-style=2
+cstm_29aa820e-desc=Aantal lijnen context
+cstm_29aa820e-line=#vergelijk 2 tekstbestanden met diff, met veranderlijk aantal context-lijnen (via popup vraag)\n# evt. extra opties:\n#\t-Z, --ignore-trailing-space\ndiff -c$fm_value %F | less\n
+cstm_29aa820e-task_err=1
+cstm_29aa820e-task_out=1
+cstm_29aa820e-term=1
+

@@ -4,13 +4,13 @@
 
 [Plugin]
 config_version-s=38
-cstm_0f75aa51-y=
-cstm_0f75aa51-label=hexdump
-cstm_0f75aa51-icon=text-x-chdr
-cstm_0f75aa51-cxt=0%%%%%1%%%%%5%%%%%0%%%%%false%%%%%8%%%%%0%%%%%false
-cstm_0f75aa51-desc=Are you sure?
-cstm_0f75aa51-line=echo -ne "\\e]2;hexdump "%n"\\a" & hexdump -C %f |less
-cstm_0f75aa51-task_err=1
-cstm_0f75aa51-task_out=1
-cstm_0f75aa51-term=1
+cstm_230bc44a-y=
+cstm_230bc44a-label=he_xdump
+cstm_230bc44a-icon=text-x-chdr
+cstm_230bc44a-cxt=0%%%%%1%%%%%5%%%%%0%%%%%false%%%%%8%%%%%0%%%%%false
+cstm_230bc44a-desc=Are you sure?
+cstm_230bc44a-line=## zet in xxd uitvoer een extra spatie tss. 2 blokken van 8 bytes (met evt.\n## onvolledige laatste lijn), en offset ook in caps ABCDEF\necho -ne "\\e]2;hexdump "%n"\\a" & xxd -g 1 -u %f | sed -E 's=^(.{8}):(.{24}) (.{24}) (.{1,16})=\U\1\E\2  \3\4=' | less\n#hexdump -C %f |less\n
+cstm_230bc44a-task_err=1
+cstm_230bc44a-task_out=1
+cstm_230bc44a-term=1
 

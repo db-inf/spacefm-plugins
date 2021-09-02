@@ -1,0 +1,13 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_0e6f7f89-y=
+cstm_0e6f7f89-label=URL from clipboard
+cstm_0e6f7f89-icon=insert-link-symbolic
+cstm_0e6f7f89-line=url=$(spacefm -s get clipboard_text)\n\t# escape letters after '%' to disrupt spacefm substitution\nurlfile="new link $(date +%\y%\m%\d_%\Hu%\Mm%\Ss).url"\necho "[InternetShortcut]" >> "$urlfile"\necho "URL=$url" >> "$urlfile"\nsleep 0.5\nspacefm -s set selected_files "$urlfile" &
+cstm_0e6f7f89-task_err=1
+cstm_0e6f7f89-keep=1
+

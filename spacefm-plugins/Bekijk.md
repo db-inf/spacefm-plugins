@@ -1,4 +1,4 @@
 # Bekijk.spacefm-plugin
-## Bekijk
+## Be_kijk
     
-    echo -ne "\\e]2;less "%n"...\\a" & less -- %F
+    echo -ne "\\e]2;less "%n"...\\a" & less -R -- %F

@@ -1,0 +1,16 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_293f6b3d-s=0
+cstm_293f6b3d-y=
+cstm_293f6b3d-label=Vergelijk met _diff <|>
+cstm_293f6b3d-icon=applications-education-symbolic
+cstm_293f6b3d-cxt=0%%%%%1%%%%%8%%%%%0%%%%%true%%%%%0%%%%%4%%%%%
+cstm_293f6b3d-line=#vergelijk 2 tekstbestanden met diff, zij aan zij\n# evt. extra opties:\n#\t-Z, --ignore-trailing-space\ndiff --side-by-side --suppress-common-lines %F | less
+cstm_293f6b3d-task_err=1
+cstm_293f6b3d-task_out=1
+cstm_293f6b3d-term=1
+

@@ -11,9 +11,9 @@
     file-roller -d %F
 
 # Bekijk.spacefm-plugin
-## Bekijk
+## Be_kijk
     
-    echo -ne "\\e]2;less "%n"...\\a" & less -- %F
+    echo -ne "\\e]2;less "%n"...\\a" & less -R -- %F
 
 # Bulk-rename.spacefm-plugin
 ## B_ulk rename
@@ -29,6 +29,13 @@
 ## Checksu_ms -> "file[1].sha256"
     
     sha256sum %N > %n.sha256
+
+# Copy-tab-to-panel-.spacefm-plugin
+## Copy tab to panel ...
+    
+    [[ $fm_value =~ ^[1-4]$ ]] || { spacefm -g --label "Fout panel nummer $fm_value" --button ok; exit; }
+    [ $(spacefm --socket-cmd get panel${fm_value}_visible) = 1 ] || spacefm --socket-cmd set panel${fm_value}_visible true
+    spacefm --socket-cmd set --panel $fm_value new_tab  %d
 
 # Copy-to-ramdisk.spacefm-plugin
 ## Copy to _ramdisk
@@ -87,7 +94,7 @@
     
 
 # HexEdit-Tweak.spacefm-plugin
-## He_xEdit Tweak
+## HexEdit Tweak
     
     ## run in Terminal (werkt, maar zonder eigen venstertitel)
     #tweak -l %f
@@ -101,9 +108,9 @@
     ## Maar in 1ste tab kan xfce4-terminal alleen opdracht uitvoeren met -e "command param",
     ## want -x, waarvoor rest van de lijn de opdracht is, kan alleen als laatste parameter.
     ## Spacefm wil geen quotes rond %n en %f, dus gebruik de overeenkomstige shell variabelen :
-    xfce4-terminal --geometry=78x51 --hide-menubar --hide-toolbar -T "tweak $fm_filename" -H -e "tweak -l \"$fm_file\"" --active-tab --tab -T "man tweak" -e "man tweak"
+    xfce4-terminal --geometry=78x51 --hide-menubar --hide-toolbar -T "tweak $fm_filename" -H -e "tweak -fl \"$fm_file\"" --active-tab --tab -T "man tweak" -e "man tweak"
     ## andere workaround 
-    #export bestand=%f;xfce4-terminal --geometry=78x51 --hide-menubar --hide-toolbar -T tweak_%n -H -e "tweak -l \"$bestand\"" --active-tab --tab -T "man tweak" -e "man tweak"
+    #export bestand=%f;xfce4-terminal --geometry=78x51 --hide-menubar --hide-toolbar -T tweak_%n -H -e "tweak -fl \"$bestand\"" --active-tab --tab -T "man tweak" -e "man tweak"
     
 
 # ImageWrapper---file1pdf.spacefm-plugin
@@ -319,6 +326,17 @@
     	batrash %F
     
 
+# URL-from-clipboard.spacefm-plugin
+## URL from clipboard
+    
+    url=$(spacefm -s get clipboard_text)
+    	# escape letters after '%' to disrupt spacefm substitution
+    urlfile="new link $(date +%\y%\m%\d_%\Hu%\Mm%\Ss).url"
+    echo "[InternetShortcut]" >> "$urlfile"
+    echo "URL=$url" >> "$urlfile"
+    sleep 0.5
+    spacefm -s set selected_files "$urlfile" &
+
 # Unmount-archief-op-mediazipmnt.spacefm-plugin
 ## Unmount archief op /media/zipmnt
     
@@ -347,6 +365,23 @@
     
     #opent WinMerge; playonlinux mount linux root op windows schijfletter Z:
     /usr/share/playonlinux/playonlinux --run "WinMerge" /r /x /u "Z:${fm_files[0]}" "Z:${fm_files[1]}"
+
+# Vergelijk-met-diff-varcontext.spacefm-plugin
+## Vergelijk met dif_f ☰
+    
+    #vergelijk 2 tekstbestanden met diff, met veranderlijk aantal context-lijnen (via popup vraag)
+    # evt. extra opties:
+    #	-Z, --ignore-trailing-space
+    diff -c$fm_value %F | less
+    
+
+# Vergelijk-met-diff-zijaanzij.spacefm-plugin
+## Vergelijk met _diff <|>
+    
+    #vergelijk 2 tekstbestanden met diff, zij aan zij
+    # evt. extra opties:
+    #	-Z, --ignore-trailing-space
+    diff --side-by-side --suppress-common-lines %F | less
 
 # ZipWebBrowser-hier.spacefm-plugin
 ## _ZipWebBrowser hier
@@ -406,9 +441,13 @@
     
 
 # hexdump.spacefm-plugin
-## hexdump
+## he_xdump
     
-    echo -ne "\\e]2;hexdump "%n"\\a" & hexdump -C %f |less
+    ## zet in xxd uitvoer een extra spatie tss. 2 blokken van 8 bytes (met evt.
+    ## onvolledige laatste lijn), en offset ook in caps ABCDEF
+    echo -ne "\\e]2;hexdump "%n"\\a" & xxd -g 1 -u %f | sed -E 's=^(.{8}):(.{24}) (.{24}) (.{1,16})=\U\1\E\2  \3\4=' | less
+    #hexdump -C %f |less
+    
 
 # ibm850---utf-8.spacefm-plugin
 ## ibm850 -> utf-8
@@ -443,7 +482,9 @@
     	## even wachten tot spacefm bijwerkt
        sleep 0.3
        spacefm --socket-cmd set --panel 3 selected_filenames %N
-    
+    #   soms handig: focus, of focus en selectie, terug naar panel 1 (context: alleen panel 1)
+    	#   spacefm --socket-cmd set focused_panel 1
+       spacefm --socket-cmd set --panel 1 selected_filenames %N
     else
     	echo "Open eerst in panel 3 een andere bestemmingsmap dan de map van dit panel"
     fi
@@ -463,6 +504,11 @@
     " %N|sort) )
     sha256sum "${A[@]}"
 
+# tail-VanDale.spacefm-plugin
+## tail VanDale
+    
+    xfce4-terminal --geometry=40x20 --hide-menubar --hide-toolbar -T tail_%n -e "bash -ic 'tail -F %f | grep -E \"^<<<\"'"
+
 # tarxz-HIER.spacefm-plugin
 ## tar.xz HIER
     
@@ -478,7 +524,19 @@
 ## Bekijk (less)
     
 
+# Jbig2-viewer.spacefm-file-handler
+## Jbig2 viewer
+    
+
 # Open-in-Firefox.spacefm-file-handler
 ## Open in Firefox
+    
+
+# Stafke-kaarten.spacefm-file-handler
+## Stafke kaarten
+    
+
+# Stafke-tiled-mapviewer.spacefm-file-handler
+## Stafke tiled-mapviewer
     
 

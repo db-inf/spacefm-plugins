@@ -1,0 +1,13 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_1a7b596a-y=
+cstm_1a7b596a-label=tail VanDale
+cstm_1a7b596a-line=xfce4-terminal --geometry=40x20 --hide-menubar --hide-toolbar -T tail_%n -e "bash -ic 'tail -F %f | grep -E \"^<<<\"'"
+cstm_1a7b596a-task_err=1
+cstm_1a7b596a-task_out=1
+cstm_1a7b596a-keep=1
+

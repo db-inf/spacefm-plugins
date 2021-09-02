@@ -1,0 +1,18 @@
+# SpaceFM Plugin File
+
+# THIS FILE IS NOT DESIGNED TO BE EDITED
+
+[Plugin]
+config_version-s=38
+cstm_356abb8d-s=3
+cstm_356abb8d-y=
+cstm_356abb8d-label=Copy tab to panel ...
+cstm_356abb8d-icon=dialog-ok-apply
+cstm_356abb8d-b=2
+cstm_356abb8d-style=2
+cstm_356abb8d-desc=Welk panel (1, 2, 3 of 4)
+cstm_356abb8d-line=[[ $fm_value =~ ^[1-4]$ ]] || { spacefm -g --label "Fout panel nummer $fm_value" --button ok; exit; }\n[ $(spacefm --socket-cmd get panel${fm_value}_visible) = 1 ] || spacefm --socket-cmd set panel${fm_value}_visible true\nspacefm --socket-cmd set --panel $fm_value new_tab  %d
+cstm_356abb8d-task_err=1
+cstm_356abb8d-task_out=1
+cstm_356abb8d-keep=1
+

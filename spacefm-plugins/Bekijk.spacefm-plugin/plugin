@@ -4,13 +4,13 @@
 
 [Plugin]
 config_version-s=38
-cstm_49e1f68b-y=
-cstm_49e1f68b-label=Bekijk
-cstm_49e1f68b-icon=text
-cstm_49e1f68b-cxt=0%%%%%0%%%%%5%%%%%0%%%%%false
-cstm_49e1f68b-desc=Are you sure?
-cstm_49e1f68b-line=echo -ne "\\e]2;less "%n"...\\a" & less -- %F
-cstm_49e1f68b-task_err=1
-cstm_49e1f68b-task_out=1
-cstm_49e1f68b-term=1
+cstm_18e5dbcd-y=
+cstm_18e5dbcd-label=Be_kijk
+cstm_18e5dbcd-icon=text
+cstm_18e5dbcd-cxt=0%%%%%0%%%%%5%%%%%0%%%%%false
+cstm_18e5dbcd-desc=Are you sure?
+cstm_18e5dbcd-line=echo -ne "\\e]2;less "%n"...\\a" & less -R -- %F
+cstm_18e5dbcd-task_err=1
+cstm_18e5dbcd-task_out=1
+cstm_18e5dbcd-term=1
 

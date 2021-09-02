@@ -20,7 +20,9 @@
     	## even wachten tot spacefm bijwerkt
        sleep 0.3
        spacefm --socket-cmd set --panel 3 selected_filenames %N
-    
+    #   soms handig: focus, of focus en selectie, terug naar panel 1 (context: alleen panel 1)
+    	#   spacefm --socket-cmd set focused_panel 1
+       spacefm --socket-cmd set --panel 1 selected_filenames %N
     else
     	echo "Open eerst in panel 3 een andere bestemmingsmap dan de map van dit panel"
     fi

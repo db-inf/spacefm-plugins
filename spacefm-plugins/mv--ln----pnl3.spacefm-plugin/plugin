@@ -3,14 +3,14 @@
 # THIS FILE IS NOT DESIGNED TO BE EDITED
 
 [Plugin]
-config_version-s=37
-cstm_49591157-y=
-cstm_49591157-label=mv && ln --> pnl3
-cstm_49591157-icon=emblem-symbolic-link
-cstm_49591157-cxt=0%%%%%0%%%%%11%%%%%0%%%%%1
-cstm_49591157-line=# verplaats geselecteerde bestanden naar panel 3, en zet symlink ernaar hier\nif [[ -n "${fm_pwd_panel[3]}" && "${fm_pwd_panel[3]}" != "${fm_pwd}"  ]]\nthen\n\t#lopen expliciet over alle bestanden, voor controle op succes (mv is te grof)\n   for i in %N \n   do\n\t# "mv" overschrijft met exitcode 0, met of zonder optie -n --no-clobber\n\t# daarom testen we zelf of doel al bestaat; voor de zekerheid toch "mv -n"\n      if [ ! -e "${fm_pwd_panel[3]}/$i" ] && [ ! -L "${fm_pwd_panel[3]}/$i" ] && mv -n "$i" "${fm_pwd_panel[3]}/"\n      then\n\t\t# voor de zekerheid geen -f --force\n         ln -s "${fm_pwd_panel[3]}/${i}"\n      else\n         echo \"${i}\" bestaat al in panel 3, of move niet OK: nakijken\n      fi\n   done\n\t## even wachten tot spacefm bijwerkt\n   sleep 0.3\n   spacefm --socket-cmd set --panel 3 selected_filenames %N\n\nelse\n\techo "Open eerst in panel 3 een andere bestemmingsmap dan de map van dit panel"\nfi\n
-cstm_49591157-task=1
-cstm_49591157-task_err=1
-cstm_49591157-task_out=1
-cstm_49591157-keep=1
+config_version-s=38
+cstm_77bee8b9-y=
+cstm_77bee8b9-label=mv && ln --> pnl3
+cstm_77bee8b9-icon=emblem-symbolic-link
+cstm_77bee8b9-cxt=0%%%%%0%%%%%11%%%%%0%%%%%1
+cstm_77bee8b9-line=# verplaats geselecteerde bestanden naar panel 3, en zet symlink ernaar hier\nif [[ -n "${fm_pwd_panel[3]}" && "${fm_pwd_panel[3]}" != "${fm_pwd}"  ]]\nthen\n\t#lopen expliciet over alle bestanden, voor controle op succes (mv is te grof)\n   for i in %N \n   do\n\t# "mv" overschrijft met exitcode 0, met of zonder optie -n --no-clobber\n\t# daarom testen we zelf of doel al bestaat; voor de zekerheid toch "mv -n"\n      if [ ! -e "${fm_pwd_panel[3]}/$i" ] && [ ! -L "${fm_pwd_panel[3]}/$i" ] && mv -n "$i" "${fm_pwd_panel[3]}/"\n      then\n\t\t# voor de zekerheid geen -f --force\n         ln -s "${fm_pwd_panel[3]}/${i}"\n      else\n         echo \"${i}\" bestaat al in panel 3, of move niet OK: nakijken\n      fi\n   done\n\t## even wachten tot spacefm bijwerkt\n   sleep 0.3\n   spacefm --socket-cmd set --panel 3 selected_filenames %N\n#   soms handig: focus, of focus en selectie, terug naar panel 1 (context: alleen panel 1)\n\t#   spacefm --socket-cmd set focused_panel 1\n   spacefm --socket-cmd set --panel 1 selected_filenames %N\nelse\n\techo "Open eerst in panel 3 een andere bestemmingsmap dan de map van dit panel"\nfi\n
+cstm_77bee8b9-task=1
+cstm_77bee8b9-task_err=1
+cstm_77bee8b9-task_out=1
+cstm_77bee8b9-keep=1
 
