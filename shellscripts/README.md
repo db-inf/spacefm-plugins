@@ -1,5 +1,5 @@
 # Shell scripts
-some of ny plugins delegate the real work to a script that I also can run from the command line
+some of my plugins delegate the real work to a script that I also can run from the command line
 
 ## scripts to change codepage 
 These scripts
